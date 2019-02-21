@@ -1,4 +1,4 @@
 # JavaAssignments
 Assignments given during session
 
-commit test message
+commit test messages
