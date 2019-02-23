@@ -107,5 +107,8 @@ public class Voting {
 	}
 	public static void testME() {
 		//Bhuvanesh added this file
+		//dinesh modified 
+		float q=2;
+		System.out.println(q);
 	}
 }
