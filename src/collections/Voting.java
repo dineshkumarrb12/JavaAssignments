@@ -8,8 +8,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Voting {
-public static void main(String[] args)
-{
+	public static void main(String[] args)
+	{
 		Queue<Integer> voterid=new LinkedList<>();
 		voterid.add(1001);
 		voterid.add(1002);
@@ -31,7 +31,7 @@ public static void main(String[] args)
 		voterid.add(1011);
 		voterid.add(1012);
 		voterid.add(1007);
-		
+
 		HashMap<Integer,Integer> agecollect=new LinkedHashMap<Integer,Integer>();
 		ArrayList<Integer> windowcount1=new ArrayList<>();
 		ArrayList<Integer> windowcount2=new ArrayList<>();
@@ -39,7 +39,7 @@ public static void main(String[] args)
 		ArrayList<Integer> windowcount4=new ArrayList<>();
 		ArrayList<Integer> windowcount5=new ArrayList<>();
 		ArrayList<Integer> windowcount6=new ArrayList<>();
-		
+
 		agecollect.put(1001, 44);
 		agecollect.put(1001, 44);
 		agecollect.put(1002, 64);
@@ -66,13 +66,13 @@ public static void main(String[] args)
 			int a=voterid.poll();
 			int agegot=agecollect.get(a);
 			windowcount6.add(a);
-			
+
 			if(agegot>=18 && agegot<=25)
 			{
 				//System.out.println("window 1\t"+agegot+"\n");
 				windowcount1.add(a);
 			}
-		else if(agegot>=26 && agegot<=35)
+			else if(agegot>=26 && agegot<=35)
 			{
 				//System.out.println("window 2\t"+agegot+"\n");
 				windowcount2.add(a);
@@ -103,5 +103,9 @@ public static void main(String[] args)
 		System.out.println("Voter's casted vote in window 4\t"+windowcount4);
 		System.out.println("Voter's casted vote in window 5\t"+windowcount5);
 		System.out.println("Voter's casted vote in window 6\t"+windowcount6);
+
+	}
+	public static void testME() {
+		//Bhuvanesh added this file
 	}
 }
