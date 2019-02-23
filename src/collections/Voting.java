@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Voting {
@@ -38,7 +39,8 @@ public class Voting {
 		ArrayList<Integer> windowcount3=new ArrayList<>();
 		ArrayList<Integer> windowcount4=new ArrayList<>();
 		ArrayList<Integer> windowcount5=new ArrayList<>();
-		ArrayList<Integer> windowcount6=new ArrayList<>();
+		ArrayList<Integer> votedList=new ArrayList<>();
+		ArrayList<Integer> duplicatesList=new ArrayList<>();
 
 		agecollect.put(1001, 44);
 		agecollect.put(1001, 44);
@@ -61,12 +63,33 @@ public class Voting {
 		agecollect.put(1011, 19);
 		agecollect.put(1012, 35);
 		agecollect.put(1007, 21);
+		
+		
 		while(voterid.peek()!=null)
 		{
 			int a=voterid.poll();
 			int agegot=agecollect.get(a);
-			windowcount6.add(a);
-
+			
+			
+			//Approach 1
+			if(votedList.contains(a)) {
+				duplicatesList.add(a);
+				continue;
+			}else {
+				votedList.add(a);
+			}
+			
+			/*
+			
+			//Approach2
+			if(!votedList.contains(a)) {
+				votedList.add(a);
+			}else {
+				duplicatesList.add(a);
+				continue;
+			}
+*/
+			//user enter voting
 			if(agegot>=18 && agegot<=25)
 			{
 				//System.out.println("window 1\t"+agegot+"\n");
@@ -102,7 +125,8 @@ public class Voting {
 		System.out.println("Voter's casted vote in window 3\t"+windowcount3);
 		System.out.println("Voter's casted vote in window 4\t"+windowcount4);
 		System.out.println("Voter's casted vote in window 5\t"+windowcount5);
-		System.out.println("Voter's casted vote in window 6\t"+windowcount6);
+		System.out.println("Voter's casted vote in Voted list\t"+votedList);
+		System.out.println("Voters Caught while casting bogus vote: \t"+duplicatesList);
 
 	}
 	public static void testME() {
