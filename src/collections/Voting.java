@@ -110,5 +110,8 @@ public class Voting {
 		
 		int i = 0;
 		System.out.println("Test this file out");
+		//dinesh modified 
+		float q=2;
+		System.out.println(q);
 	}
 }
